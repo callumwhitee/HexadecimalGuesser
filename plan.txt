@@ -1,0 +1,8 @@
+sort into 2d array for hex and colour in one row?
+find similar string method?
+maybe import package?
+
+user types in 6 characters
+computer tells them what number was closest?
+
+find out if you can limit length of an entered string
