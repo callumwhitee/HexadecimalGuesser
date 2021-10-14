@@ -15,9 +15,10 @@ class Program {
   static void readInHexColours()
   {
       int colums = 2;
+      int rows = hexColours.Length;
       string[] hexColours = File.ReadAllLines(path);
       string[colums,hexColours.Length] colours;
-      for(int i = 0; i < hexColours.Length; i++)
+      for(int i = 0; i < rows; i++)
       {
           for(int j = 0; j < colums;j++)
           {
