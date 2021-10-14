@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/runner/C/main.csproj": {}
+    "/home/runner/hexCode/main.csproj": {}
   },
   "projects": {
-    "/home/runner/C/main.csproj": {
+    "/home/runner/hexCode/main.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/runner/C/main.csproj",
+        "projectUniqueName": "/home/runner/hexCode/main.csproj",
         "projectName": "main",
-        "projectPath": "/home/runner/C/main.csproj",
+        "projectPath": "/home/runner/hexCode/main.csproj",
         "packagesPath": "/home/runner/.nuget/packages/",
-        "outputPath": "/home/runner/C/obj/",
+        "outputPath": "/home/runner/hexCode/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/runner/.nuget/NuGet/NuGet.Config"
