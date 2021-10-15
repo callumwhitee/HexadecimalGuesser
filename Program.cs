@@ -47,14 +47,7 @@ class Program {
 
 
 
-      for(int l = 0; l < colours.GetLength(0);l++)
-      {
-        for(int h = 0; h < colours.GetLength(1);h++)
-        {
-          Console.Write(colours[l,h] + ",");
-        }
-        Console.WriteLine();
-      }
+      
 
 
       
