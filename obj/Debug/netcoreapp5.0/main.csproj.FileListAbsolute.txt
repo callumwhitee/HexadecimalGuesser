@@ -22,3 +22,19 @@
 /home/runner/hexCode/obj/Debug/netcoreapp5.0/main.dll
 /home/runner/hexCode/obj/Debug/netcoreapp5.0/ref/main.dll
 /home/runner/hexCode/obj/Debug/netcoreapp5.0/main.pdb
+C:\Users\Callum White\Documents\GitHub\hexCode\bin\Debug\netcoreapp5.0\main.exe
+C:\Users\Callum White\Documents\GitHub\hexCode\bin\Debug\netcoreapp5.0\main.deps.json
+C:\Users\Callum White\Documents\GitHub\hexCode\bin\Debug\netcoreapp5.0\main.runtimeconfig.json
+C:\Users\Callum White\Documents\GitHub\hexCode\bin\Debug\netcoreapp5.0\main.runtimeconfig.dev.json
+C:\Users\Callum White\Documents\GitHub\hexCode\bin\Debug\netcoreapp5.0\main.dll
+C:\Users\Callum White\Documents\GitHub\hexCode\bin\Debug\netcoreapp5.0\ref\main.dll
+C:\Users\Callum White\Documents\GitHub\hexCode\bin\Debug\netcoreapp5.0\main.pdb
+C:\Users\Callum White\Documents\GitHub\hexCode\obj\Debug\netcoreapp5.0\main.csproj.AssemblyReference.cache
+C:\Users\Callum White\Documents\GitHub\hexCode\obj\Debug\netcoreapp5.0\main.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Callum White\Documents\GitHub\hexCode\obj\Debug\netcoreapp5.0\main.AssemblyInfoInputs.cache
+C:\Users\Callum White\Documents\GitHub\hexCode\obj\Debug\netcoreapp5.0\main.AssemblyInfo.cs
+C:\Users\Callum White\Documents\GitHub\hexCode\obj\Debug\netcoreapp5.0\main.csproj.CoreCompileInputs.cache
+C:\Users\Callum White\Documents\GitHub\hexCode\obj\Debug\netcoreapp5.0\main.dll
+C:\Users\Callum White\Documents\GitHub\hexCode\obj\Debug\netcoreapp5.0\ref\main.dll
+C:\Users\Callum White\Documents\GitHub\hexCode\obj\Debug\netcoreapp5.0\main.pdb
+C:\Users\Callum White\Documents\GitHub\hexCode\obj\Debug\netcoreapp5.0\main.genruntimeconfig.cache
