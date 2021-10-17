@@ -69,8 +69,6 @@ class Program {
       {
         // sets levensheinValue to the iteration of loop
         LevensheinValue = compareResults[i,0];
-        // writes to console
-        Console.WriteLine(LevensheinValue);
         // checks if method CheckLevenshein returns true
         if(CheckLevenshein(LevensheinValue, j)) 
         {

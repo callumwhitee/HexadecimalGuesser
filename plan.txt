@@ -19,3 +19,14 @@ possibly using a for loop to cycle through the values?
 
 if more than one hexadeciamal is different than randomly 
 choose colour?
+
+
+
+
+
+
+
+dependant on the finalColour, change 
+console color to match the colour
+
+general polish on write and read lines
