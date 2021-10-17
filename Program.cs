@@ -12,6 +12,7 @@ class Program {
     static string[,] colours;
 
   public static void Main (string[] args) {
+    // reads in user input
     ReadInUserString();
   }
 
@@ -24,16 +25,18 @@ class Program {
     Console.WriteLine("Please Enter A Hexadecimal String Of 6 Characters");
     Thread.Sleep(750);
     Console.Write("> ");
+    // takes in user input
     string EnteredHexadecimal = Console.ReadLine();
     // validates the hexadeciamal input
     bool isValid = isValidHex(EnteredHexadecimal);
     if(isValid)
     {
-      Console.WriteLine("valid");
+      CheckAgainstColours(EnteredHexadecimal);
     }
     else
     {
       // retry method
+      ReadInUserString();
     }
   }
 
@@ -42,7 +45,22 @@ class Program {
 
   static void CheckAgainstColours(string input)
   {
+    // poplates 2d array with hexColours.csv
+    readInHexColours();
+    int[,] compareResults;
+    // initiales the 2d array
+    compareResults = new int[colours.GetLength(0), 2];
     
+    // this for loop compares the user input
+    // with the hexadecimal values
+    for(int i = 0; i < colours.GetLength(0); i++)
+    {
+      compareResults[i,0] = Compare(input, colours[i,0]);
+      compareResults[i,1] = i;
+      Console.WriteLine(compareResults[i,0] + "," + compareResults[i,1]);
+    }
+
+
 
 
   }
