@@ -10,9 +10,12 @@ find out if you can limit length of an entered string n
 
 
 // CheckAgainstColours();
-possibly make a 2d array with 1 coloum being the return of the Compare() method
+possibly make a 2d array with 1 coloum being the 
+return of the Compare() method
 and the other being the iteration of i
 
-check the lowest value in the array
+check the lowest value in the array 
+possibly using a for loop to cycle through the values?
 
-if more than one hexadeciamal is different than randomly choose colour?
+if more than one hexadeciamal is different than randomly 
+choose colour?

@@ -57,13 +57,81 @@ class Program {
     {
       compareResults[i,0] = Compare(input, colours[i,0]);
       compareResults[i,1] = i;
-      Console.WriteLine(compareResults[i,0] + "," + compareResults[i,1]);
     }
+    
 
-
-
-
+    // initialse the levinshein value
+    int LevensheinValue;
+    // for loop to cycle thru the levenshein results
+    for(int j = 0; j < compareResults.GetLength(0); j++)
+    {
+      for(int i = 0; i < compareResults.GetLength(0); i++)
+      {
+        // sets levensheinValue to the iteration of loop
+        LevensheinValue = compareResults[i,0];
+        // writes to console
+        Console.WriteLine(LevensheinValue);
+        // checks if method CheckLevenshein returns true
+        if(CheckLevenshein(LevensheinValue, j)) 
+        {
+          // sets finalColour to the iteration of the array
+          string finalColour = colours[i,1];
+          // runs WriteFinalColour
+          // passes finalColour
+          // passes if colour is exact value
+          if(j == 0)
+          {
+            WriteFinalColour(finalColour, false);
+          }
+          else
+          {
+            WriteFinalColour(finalColour, true);
+          }
+          // stops loop 
+          break;
+        }
+      }
+    }
   }
+
+  static bool CheckLevenshein(int LevensheinValue, int value)
+  {
+    if(LevensheinValue == value)
+    {
+      return true;
+    }
+    return false;
+  }
+
+
+  static void WriteFinalColour(string colour, bool close)
+  {
+    if(close == false)
+    {
+      Console.Clear();
+      Console.WriteLine("Your Colour Was " + colour);
+      Thread.Sleep(2000);
+      Console.WriteLine("Press Any Key To Exit.");
+      Console.ReadKey();
+      Console.Clear();
+      Environment.Exit(0);
+    }
+    else
+    {
+      Console.Clear();
+      Console.WriteLine("Your Value Was Closest To " + colour);
+      Thread.Sleep(2000);
+      Console.WriteLine("Press Any Key To Exit.");
+      Console.ReadKey();
+      Console.Clear();
+      Environment.Exit(0);
+    }
+  }
+  
+
+  
+
+  
 
   static void readInHexColours()
   {
