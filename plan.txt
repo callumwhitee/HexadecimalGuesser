@@ -1,8 +1,9 @@
-sort into 2d array for hex and colour in one row?
-find similar string method?
-maybe import package?
+sort into 2d array for hex and colour in one row? y
+find similar string method? y
+maybe import package? n
 
 user types in 6 characters
+check if 6 char are a valid hexadecimal
 computer tells them what number was closest?
 
-find out if you can limit length of an entered string
+find out if you can limit length of an entered string n
