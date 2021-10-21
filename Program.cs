@@ -1,20 +1,130 @@
 using System;
 using System.IO;
 using System.Threading;
+using Ionic.Zip;
+using System.Linq;
 
 
 class Program {
 
-    // globally declare the string path 
-    static string path = "hexColours.csv";
-
+    // globally declare the string path of hexColours.csv
+    static string hexPath = "csvFiles/hexColours.csv";
+    // globally declare the string path of userDetails.csv
+    static string userPath = "csvFiles/userDetails.csv";
     // globally declare the 2d array 'colours'
     static string[,] colours;
 
-  public static void Main (string[] args) {
-    // reads in user input
-    ReadInUserString();
+    static string enteredUsername;
+    static string enteredPassword;
+
+  public static void Main (string[] args) 
+  {
+    StartMenu();
   }
+
+
+
+
+
+
+  static void StartMenu()
+  {
+
+
+  }
+
+
+
+  static void MainMenu()
+  {
+
+  }
+
+
+  static void ReadLoginDetails()
+  {
+
+  }
+
+  static void Login()
+  {
+    
+
+      Console.Clear();
+      Console.WriteLine("Please Enter Your Username");
+      Console.Write("> ");
+      enteredUsername = Console.ReadLine();
+      Console.Clear();
+      Console.WriteLine("Please Enter Password");
+      Console.Write("> ");
+      enteredPassword = Console.ReadLine();
+
+      //try entering username File
+
+      try
+      {
+          string userNamesReadIn = File.ReadAllText(userPath);
+          string[] details = userNamesReadIn.Split(',');
+          string userPassword = enteredUsername + enteredPassword;
+          if(details.Contains(userPassword))
+          {
+              Console.Clear();
+              Console.WriteLine("Your Details Are Correct");
+              Thread.Sleep(500);
+              MainMenu();
+          }
+          else
+          {
+              Console.Clear();
+              Console.WriteLine("Your Entered Details Were Not Correct.");
+              Console.WriteLine("Please Try Again");
+              Thread.Sleep(1000);
+              Login();
+          }
+      }
+      catch(Exception e)
+      {
+          Console.WriteLine(e.Message);
+      }
+
+
+
+  }
+
+
+
+  static void Zip()
+  {
+    using(ZipFile zip = new ZipFile())
+      {
+          zip.AddFile("data/usernames.csv");
+          zip.Save("data/zipped");
+          File.Delete("data/usernames.csv");
+      }
+  }
+
+  static void UnZip()
+  {
+      using(ZipFile zip = new ZipFile("data/zipped"))
+      {
+          zip.ExtractAll("", Ionic.Zip.ExtractExistingFileAction.OverwriteSilently);
+          File.Delete("data/zipped");
+      }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -31,12 +141,23 @@ class Program {
     bool isValid = isValidHex(EnteredHexadecimal);
     if(isValid)
     {
+        // takes in user input
+        // checks the input against
+        // the 2d array colours[];
       CheckAgainstColours(EnteredHexadecimal);
     }
     else
     {
-      // retry method
-      ReadInUserString();
+        // user presses key to retry program
+        Console.Clear();
+        Console.WriteLine("That Was Not A Valid Hexadecimal Value");
+        Thread.Sleep(750);
+        Console.WriteLine("Press Any Key To Retry");
+        Console.Write("> ");
+        Console.ReadKey();
+        ReadInUserString();
+
+
     }
   }
 
@@ -119,10 +240,25 @@ class Program {
       Console.Clear();
       Console.WriteLine("Your Value Was Closest To " + colour);
       Thread.Sleep(2000);
-      Console.WriteLine("Press Any Key To Exit.");
-      Console.ReadKey();
-      Console.Clear();
-      Environment.Exit(0);
+      Console.WriteLine("Press R To Retry.");
+      Thread.Sleep(800);
+      Console.WriteLine("Press Any Other Key To Stop Program.");
+      Console.Write("> ");
+      string input = Console.ReadLine().ToLower();
+      try
+      {
+      char charInput = Convert.ToChar(input);
+      }
+      catch(Exception e)
+      {
+          Console.WriteLine("oopsie daisies!");
+          Environment.Exit(0);
+      }
+      
+      if(charInput == 'r')
+        ReadInUserString(); 
+      else
+        Environment.Exit(0);  
     }
   }
   
@@ -133,14 +269,14 @@ class Program {
 
   static void readInHexColours()
   {
-      string[] hexColours = new string[File.ReadAllLines(path).Length];
+      string[] hexColours = new string[File.ReadAllLines(hexPath).Length];
       int colums = 2;
       int rows = hexColours.Length;
       colours = new string[rows, colums];
       //read all lines in path
       try
       {
-        hexColours = File.ReadAllLines(path);
+        hexColours = File.ReadAllLines(hexPath);
       }
       // catches exceptions
       catch(Exception e)

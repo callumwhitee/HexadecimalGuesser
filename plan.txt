@@ -26,7 +26,10 @@ choose colour?
 
 
 
-dependant on the finalColour, change 
-console color to match the colour
 
-general polish on write and read lines
+
+
+LOGIN method
+
+
+take main idea from MainMenu.cs

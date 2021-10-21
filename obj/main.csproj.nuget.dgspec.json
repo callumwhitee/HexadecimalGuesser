@@ -1,24 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Callum White\\Documents\\GitHub\\hexCode\\main.csproj": {}
+    "/home/runner/hexCode/main.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Callum White\\Documents\\GitHub\\hexCode\\main.csproj": {
+    "/home/runner/hexCode/main.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Callum White\\Documents\\GitHub\\hexCode\\main.csproj",
+        "projectUniqueName": "/home/runner/hexCode/main.csproj",
         "projectName": "main",
-        "projectPath": "C:\\Users\\Callum White\\Documents\\GitHub\\hexCode\\main.csproj",
-        "packagesPath": "C:\\Users\\Callum White\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Callum White\\Documents\\GitHub\\hexCode\\obj\\",
+        "projectPath": "/home/runner/hexCode/main.csproj",
+        "packagesPath": "/home/runner/.nuget/packages/",
+        "outputPath": "/home/runner/hexCode/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Callum White\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/runner/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp5.0"
         ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
         "frameworks": {
           "net5.0": {
             "targetAlias": "netcoreapp5.0",
@@ -49,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/nix/store/nv6sla72qmb07nma9xrsjq74djggqr0g-dotnet-sdk-5.0.202/sdk/5.0.202/RuntimeIdentifierGraph.json"
         }
       }
     }
