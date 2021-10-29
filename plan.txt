@@ -1,35 +1,26 @@
-sort into 2d array for hex and colour in one row? y
-find similar string method? y
-maybe import package? n
+//PLAN//
+
+sort into 2d array?
+find a package that finds the similarity between two differnt strings?
+if not, maybe try and code my own?
+
+Damereau Levenshein Distance Algorithm returns a int of the differnce between two strings
+https://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance
 
 user types in 6 characters
 check if 6 char are a valid hexadecimal
-computer tells them what number was closest?
 
-find out if you can limit length of an entered string n
 
 
 // CheckAgainstColours();
-possibly make a 2d array with 1 coloum being the 
+make a 2d array with 1 coloum being the 
 return of the Compare() method
 and the other being the iteration of i
 
 check the lowest value in the array 
 possibly using a for loop to cycle through the values?
 
-if more than one hexadeciamal is different than randomly 
-choose colour?
 
 
 
 
-
-
-
-
-
-
-LOGIN method
-
-
-take main idea from MainMenu.cs

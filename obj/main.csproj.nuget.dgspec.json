@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/runner/hexCode/main.csproj": {}
+    "/home/runner/HexadecimalProject/main.csproj": {}
   },
   "projects": {
-    "/home/runner/hexCode/main.csproj": {
+    "/home/runner/HexadecimalProject/main.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/runner/hexCode/main.csproj",
+        "projectUniqueName": "/home/runner/HexadecimalProject/main.csproj",
         "projectName": "main",
-        "projectPath": "/home/runner/hexCode/main.csproj",
+        "projectPath": "/home/runner/HexadecimalProject/main.csproj",
         "packagesPath": "/home/runner/.nuget/packages/",
-        "outputPath": "/home/runner/hexCode/obj/",
+        "outputPath": "/home/runner/HexadecimalProject/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/runner/.nuget/NuGet/NuGet.Config"
@@ -37,6 +37,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "netcoreapp5.0",
+          "dependencies": {
+            "DotNetZip": {
+              "target": "Package",
+              "version": "[1.15.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
