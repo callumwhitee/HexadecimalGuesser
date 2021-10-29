@@ -7,49 +7,312 @@ using System.Linq;
 
 class Program {
 
+    // CALLUMS HEXADECIMAL PROJECT
+
+
+    /* 
+    The Inital Username Is = "user"
+    The Intial Password Is = "pass"
+    */
+
+
     // globally declare the string path of hexColours.csv
     static string hexPath = "csvFiles/hexColours.csv";
     // globally declare the string path of userDetails.csv
     static string userPath = "csvFiles/userDetails.csv";
     // globally declare the 2d array 'colours'
     static string[,] colours;
-
+    // globally declares the enteredUsername
     static string enteredUsername;
+    // globally declares the enteredPassword
     static string enteredPassword;
 
   public static void Main (string[] args) 
   {
-    StartMenu();
+      // runs start
+    Start();
   }
 
-
-
-
-
-
-  static void StartMenu()
+  static void Start()
   {
-
-
+      Check();
+      Login();
   }
-
-
 
   static void MainMenu()
   {
-
+      Console.Clear();
+      // makes sure the console is white
+      Console.ForegroundColor = ConsoleColor.White;
+      // takes in what method to do
+      Console.WriteLine("Please Choose What Method To Do");
+      Thread.Sleep(500);
+      Console.ForegroundColor = ConsoleColor.Green;
+      Console.WriteLine("Hexadecimal Guesser");
+      Thread.Sleep(500);
+      Console.WriteLine("Colour Guesser");
+      Thread.Sleep(500);
+      Console.WriteLine("New Login");
+      Thread.Sleep(500);
+      // turns console red for option "Quit"
+      Console.ForegroundColor = ConsoleColor.Red;
+      Console.WriteLine("Logout");
+      Thread.Sleep(500);
+      Console.WriteLine("Quit");
+      Console.ForegroundColor = ConsoleColor.White;
+      Console.Write("> ");
+      // crates string choice and turns it lower case
+      string choice = Console.ReadLine().ToLower();
+      // if string has a value then run code
+      if(String.IsNullOrWhiteSpace(choice) == false)
+      {
+          // switch to decide user input
+          switch(choice)
+          {
+              case "hexadecimal guesser":
+                ReadInUserString();
+                break;
+              case "colour guesser":
+                ColourGuesser();
+                break;
+              case "new login":
+                NewLogin();
+                break;
+              case "logout":
+                Console.WriteLine("Logging Out...");
+                Thread.Sleep(1000);
+                //quits program
+                Login();
+                break;
+              case "quit":
+                Console.WriteLine("Quitting Program");
+                Thread.Sleep(500);
+                Environment.Exit(0);
+                break;
+              default:
+                // retrys the mainmenu
+                Console.WriteLine("That Was Not A Valid Method");
+                Thread.Sleep(500);
+                Console.WriteLine("Please Try Again");
+                Thread.Sleep(2000);
+                MainMenu();
+                break;
+          }
+      }
   }
 
 
-  static void ReadLoginDetails()
+
+  static void ColourGuesser()
+  {
+      // lets player choose easy or hard colour guessing game
+      Console.Clear();
+      Console.WriteLine("Would You Like To Play Easy Or Hard");
+      Thread.Sleep(500);
+      Console.ForegroundColor = ConsoleColor.Green;
+      Console.WriteLine("Easy");
+      Thread.Sleep(500);
+      Console.ForegroundColor = ConsoleColor.Red;
+      Console.WriteLine("Hard");
+      Console.ForegroundColor = ConsoleColor.White;
+      Thread.Sleep(500);
+      Console.WriteLine("Main Menu");
+      Console.Write("> ");
+      // takes in user input
+      string enteredHardness = Console.ReadLine().ToLower();
+      if(enteredHardness == "easy")
+      {
+          // runs easy
+          Console.WriteLine("You Have Selected Easy");
+          Thread.Sleep(500);
+          EasyGuesser();
+      }
+      else if(enteredHardness == "hard")
+      {
+          // warns and then runs hard
+          Console.ForegroundColor = ConsoleColor.Red;
+          Console.Clear();
+          Console.WriteLine("You Have Selected Hard");
+          Thread.Sleep(500);
+          Console.WriteLine("Warning: Very Hard");
+          Thread.Sleep(1000);
+          Console.ForegroundColor = ConsoleColor.White;
+          HardGuesser();
+      }
+      else if(enteredHardness == "main menu")
+      {
+          // returns to main menu
+          Console.Clear();
+          MainMenu();
+      }
+      else
+      {
+          // tries again if string is not a valid value
+          Console.WriteLine("You Have Not Entered A Correct Hardness");
+          Thread.Sleep(500);
+          Console.WriteLine("Please Try Again");
+          Thread.Sleep(2000);
+          ColourGuesser();
+      }
+  }
+
+  static void EasyGuesser()
   {
 
+      // gets csv file
+      string[] easyColourCsv = File.ReadAllLines("csvFiles/easyColours.csv");
+      // splits array by commas
+      string[] easyColours = easyColourCsv[0].Split(',');
+      // craetes random object
+      Random rand = new Random();
+      // creates random variabkle
+      int random = rand.Next(0,easyColours.Length);
+      // sets string as random string from array
+      string ComputerColour = easyColours[random];
+
+
+      Console.Clear();
+      Console.WriteLine("Please Enter Your Guessed Colour");
+      Console.Write("> ");
+      string guessed = Console.ReadLine().ToLower();
+      Console.Clear();
+      // if the user input is equal to the computers color, declares win
+      if(guessed == ComputerColour)
+      {
+          Console.WriteLine("You Guessed The Right Colour!");
+          Thread.Sleep(1500);
+          Console.WriteLine("Would You Like To Play Again? (Y or N)");
+          Console.Write("> ");
+          char retry = Convert.ToChar(Console.ReadLine().ToLower());
+          if(retry == 'y')
+            EasyGuesser();
+          else
+          {
+              Console.Clear();
+              Console.WriteLine("Thanks For Playing!");
+              Thread.Sleep(1000);
+              MainMenu();
+          }
+      }
+      // else say incorrect and allow user to retry
+      else
+      {
+          Console.WriteLine("You Guessed The Wrong Colour");
+          Console.WriteLine("The Colour Was " + ComputerColour);
+          Thread.Sleep(1500);
+          EasyGuesser();
+      }
+  }
+
+
+  static void HardGuesser()
+  {
+      // uses method to craete 2d array from csv file
+      readInHexColours();
+      // craetes random object
+      Random rand = new Random();
+      // creates a random int from 0 to length of first coloum of 2d array
+      int random = rand.Next(0,colours.GetLength(0));
+      // craetes a string from the 2d array
+      string ComputerColour = colours[random,1];
+
+
+      Console.Clear();
+      Console.WriteLine("Please Enter Your Guessed Colour");
+      Console.Write("> ");
+      string guessed = Console.ReadLine().ToLower();
+      Console.Clear();
+      // if the user input = the computer colour, declare win
+      if(guessed == ComputerColour)
+      {
+          Console.WriteLine("You Guessed The Right Colour!");
+          Thread.Sleep(1500);
+          Console.WriteLine("Would You Like To Play Again? (Y or N)");
+          Console.Write("> ");
+          char retry = Convert.ToChar(Console.ReadLine().ToLower());
+          if(retry == 'y')
+          // gives user chance to retry
+            ColourGuesser();
+          else
+          {
+              // returns to main menu
+              Console.Clear();
+              Console.WriteLine("Thanks For Playing!");
+              Thread.Sleep(1000);
+              MainMenu();
+          }
+      }
+      // else alow user to retry or return to main menu
+      else
+      {
+          Console.WriteLine("You Guessed The Wrong Colour");
+          Console.WriteLine("The Colour Was " + ComputerColour);
+          Thread.Sleep(1500);
+          Console.WriteLine("Would You Like To Play Again? (Y or N)");
+          Console.Write("> ");
+          char retry = Convert.ToChar(Console.ReadLine().ToLower());
+          if(retry == 'y')
+            HardGuesser();
+          else
+          {
+              Console.Clear();
+              Console.WriteLine("Thanks For Playing!");
+              Thread.Sleep(1000);
+              MainMenu();
+          }
+      }
+
+
+
+
+
+
+  }
+
+  static void NewLogin()
+  {
+      UnZip();
+      Console.Clear();
+      Console.WriteLine("Enter New Username");
+      Console.Write("> ");
+      string newUsername = Console.ReadLine();
+      Console.Clear();
+      Console.WriteLine("Enter New Password");
+      Console.Write("> ");
+      string newPassword = Console.ReadLine();
+      Console.Clear();
+      string NewUserPass = newUsername + newPassword;
+      try
+      {
+          using(StreamWriter file = new StreamWriter(@userPath , true))
+          {
+              file.Write("," + NewUserPass);
+          }
+          Console.WriteLine("Successfully Added The New Details");
+          Thread.Sleep(1500);
+          Zip();
+          MainMenu();
+      }
+      catch(Exception E)
+      {
+          Zip();
+          Console.WriteLine("There Was An Error Adding Your New Details");
+          Console.WriteLine(E.Message);
+      }
+      Zip();
+  }
+
+  static void Check()
+  {
+      if(File.Exists(userPath))
+      {
+        Zip();
+      }
   }
 
   static void Login()
   {
-    
-
+      UnZip();
       Console.Clear();
       Console.WriteLine("Please Enter Your Username");
       Console.Write("> ");
@@ -66,11 +329,12 @@ class Program {
           string userNamesReadIn = File.ReadAllText(userPath);
           string[] details = userNamesReadIn.Split(',');
           string userPassword = enteredUsername + enteredPassword;
+          Zip();
           if(details.Contains(userPassword))
           {
               Console.Clear();
               Console.WriteLine("Your Details Are Correct");
-              Thread.Sleep(500);
+              Thread.Sleep(1000);
               MainMenu();
           }
           else
@@ -97,30 +361,20 @@ class Program {
   {
     using(ZipFile zip = new ZipFile())
       {
-          zip.AddFile("data/usernames.csv");
-          zip.Save("data/zipped");
-          File.Delete("data/usernames.csv");
+          zip.AddFile(userPath);
+          zip.Save("csvFiles/userPathZipped");
+          File.Delete(userPath);
       }
   }
 
   static void UnZip()
   {
-      using(ZipFile zip = new ZipFile("data/zipped"))
+      using(ZipFile zip = new ZipFile("csvFiles/userPathZipped"))
       {
           zip.ExtractAll("", Ionic.Zip.ExtractExistingFileAction.OverwriteSilently);
-          File.Delete("data/zipped");
+          File.Delete("csvFiles/userPathZipped");
       }
   }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -225,6 +479,7 @@ class Program {
 
   static void WriteFinalColour(string colour, bool close)
   {
+
     if(close == false)
     {
       Console.Clear();
@@ -242,23 +497,14 @@ class Program {
       Thread.Sleep(2000);
       Console.WriteLine("Press R To Retry.");
       Thread.Sleep(800);
-      Console.WriteLine("Press Any Other Key To Stop Program.");
+      Console.WriteLine("Press Any Other Key To Go Back To Main Menu");
       Console.Write("> ");
       string input = Console.ReadLine().ToLower();
-      try
-      {
       char charInput = Convert.ToChar(input);
-      }
-      catch(Exception e)
-      {
-          Console.WriteLine("oopsie daisies!");
-          Environment.Exit(0);
-      }
-      
       if(charInput == 'r')
         ReadInUserString(); 
       else
-        Environment.Exit(0);  
+        MainMenu();
     }
   }
   
@@ -269,8 +515,11 @@ class Program {
 
   static void readInHexColours()
   {
+      // creates a array of the hexPath value
       string[] hexColours = new string[File.ReadAllLines(hexPath).Length];
+      // sets number of coloums of csv to 2
       int colums = 2;
+      // sets rows to number of rows
       int rows = hexColours.Length;
       colours = new string[rows, colums];
       //read all lines in path
@@ -357,12 +606,4 @@ class Program {
       
   }
 
-
-
-
-
-
-
-  
-  
 }
