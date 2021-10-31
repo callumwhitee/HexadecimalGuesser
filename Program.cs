@@ -17,7 +17,8 @@ class Program {
 
 
     // globally declare the string path of hexColours.csv
-    static string hexPath = "csvFiles/hexColours.csv";
+    static string hexPath = "csvFiles/hexColours.csv"; 
+
     // globally declare the string path of userDetails.csv
     static string userPath = "csvFiles/userDetails.csv";
     // globally declare the 2d array 'colours'
@@ -38,6 +39,19 @@ class Program {
       Check();
       Login();
   }
+
+
+
+
+
+
+
+
+
+  // MAIN MENU
+
+
+
 
   static void MainMenu()
   {
@@ -103,6 +117,11 @@ class Program {
 
 
 
+
+
+  // ASKS WHICH GUESSING GAME TO DO
+
+
   static void ColourGuesser()
   {
       // lets player choose easy or hard colour guessing game
@@ -156,6 +175,14 @@ class Program {
       }
   }
 
+
+
+
+
+
+  // EASY VERSION OF THE GUESSING GAME
+
+
   static void EasyGuesser()
   {
 
@@ -204,6 +231,8 @@ class Program {
       }
   }
 
+
+  // HARD VERSION OF THE GUESSING GAME
 
   static void HardGuesser()
   {
@@ -269,6 +298,13 @@ class Program {
 
   }
 
+
+
+
+
+  // CREATES A NEW LOGIN METHOD
+
+
   static void NewLogin()
   {
       UnZip();
@@ -309,6 +345,17 @@ class Program {
         Zip();
       }
   }
+
+
+
+
+
+
+
+
+
+  // LOGIN METHOD
+
 
   static void Login()
   {
@@ -357,6 +404,16 @@ class Program {
 
 
 
+
+
+
+
+
+
+
+
+  // ZIPPING METHODS
+
   static void Zip()
   {
     using(ZipFile zip = new ZipFile())
@@ -379,6 +436,15 @@ class Program {
 
 
 
+
+
+
+
+
+
+
+
+  // READING IN USER INPUT METHOD
 
 
 
@@ -416,6 +482,10 @@ class Program {
   }
 
 
+
+
+
+  // CHECKS INPUT AGASINST COLOURS
 
 
   static void CheckAgainstColours(string input)
@@ -467,6 +537,11 @@ class Program {
     }
   }
 
+
+
+
+  // CHEKS IF 'LEVEINSHEIN' IS EQUAL
+
   static bool CheckLevenshein(int LevensheinValue, int value)
   {
     if(LevensheinValue == value)
@@ -475,6 +550,13 @@ class Program {
     }
     return false;
   }
+
+
+
+
+
+
+  // WRITES THE FINAL OUTPUT
 
 
   static void WriteFinalColour(string colour, bool close)
@@ -511,6 +593,8 @@ class Program {
 
   
 
+
+  // RAEDS IN CSV FILE
   
 
   static void readInHexColours()
@@ -546,6 +630,16 @@ class Program {
         }
       }
   }
+
+
+
+
+
+
+
+
+  // COMAPRES TWO STRINGS
+
 
   static int Compare(string s, string t)
   {
@@ -585,6 +679,9 @@ class Program {
 
 
   }
+
+
+  // CHECKS IF STRING IS VALID HEXADECIMAL
 
 
   static bool isValidHex(string string1)
