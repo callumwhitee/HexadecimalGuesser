@@ -1,18 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "B2quqd9LJN7jsSC/lC9qOcuSfTENIJMqf8fU5qDE/UgMsW5qfa1xl0i43BAY48pTzyifaQYve8vcoKTtqQIsKA==",
-  "success": true,
-  "projectFilePath": "/home/runner/HexadecimalProject/main.csproj",
-  "expectedPackageFiles": [
-    "/home/runner/.nuget/packages/dotnetzip/1.15.0/dotnetzip.1.15.0.nupkg.sha512",
-    "/home/runner/.nuget/packages/microsoft.netcore.platforms/5.0.0/microsoft.netcore.platforms.5.0.0.nupkg.sha512",
-    "/home/runner/.nuget/packages/microsoft.win32.systemevents/5.0.0/microsoft.win32.systemevents.5.0.0.nupkg.sha512",
-    "/home/runner/.nuget/packages/system.drawing.common/5.0.0/system.drawing.common.5.0.0.nupkg.sha512",
-    "/home/runner/.nuget/packages/system.security.accesscontrol/5.0.0/system.security.accesscontrol.5.0.0.nupkg.sha512",
-    "/home/runner/.nuget/packages/system.security.permissions/5.0.0/system.security.permissions.5.0.0.nupkg.sha512",
-    "/home/runner/.nuget/packages/system.security.principal.windows/5.0.0/system.security.principal.windows.5.0.0.nupkg.sha512",
-    "/home/runner/.nuget/packages/system.text.encoding.codepages/5.0.0/system.text.encoding.codepages.5.0.0.nupkg.sha512",
-    "/home/runner/.nuget/packages/system.windows.extensions/5.0.0/system.windows.extensions.5.0.0.nupkg.sha512"
-  ],
-  "logs": []
+  "dgSpecHash": "4bNMmzhB8GhnSJ6ku2Dc9UZh3GHRQcrVF8+YuIiin25z7figfK1JLl9vOGSCXwTKwv+FNhmGkSoadKNoxoEILg==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\Callum White\\Documents\\GitHub\\hexCode\\main.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'DotNetZip (>= 1.15.0)' for 'net5.0'.",
+      "libraryId": "DotNetZip",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }
