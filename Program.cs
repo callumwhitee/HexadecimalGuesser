@@ -217,7 +217,7 @@ class Program {
       // craetes a string from the 2d array
       string ComputerColour = colours[random,1];
 
-
+      
       Console.Clear();
       Console.WriteLine("Please Enter Your Guessed Colour");
       Console.Write("> ");
@@ -497,6 +497,7 @@ class Program {
       Console.WriteLine("Your Value Was Closest To " + colour);
       Thread.Sleep(2000);
       Console.WriteLine("Press R To Retry.");
+      Console.WriteLine9("");
       Thread.Sleep(800);
       Console.WriteLine("Press Any Other Key To Go Back To Main Menu");
       Console.Write("> ");
@@ -548,21 +549,7 @@ class Program {
       }
   }
 
-<<<<<<< HEAD
 
-
-
-
-
-
-
-  // COMPARES TWO STRINGS
-
-
-
-
-=======
->>>>>>> b21361fec6058a26849b44985aed7b1e9ed35e91
   static int Compare(string s, string t)
   {
     
