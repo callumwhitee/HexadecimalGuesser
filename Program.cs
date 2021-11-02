@@ -7,7 +7,6 @@ using System.Linq;
 
 
 class Program {
-    // abc
     // CALLUMS HEXADECIMAL PROJECT
 
 
