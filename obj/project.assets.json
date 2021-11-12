@@ -5,9 +5,7 @@
   },
   "libraries": {},
   "projectFileDependencyGroups": {
-    "net5.0": [
-      "DotNetZip >= 1.15.0"
-    ]
+    "net5.0": []
   },
   "packageFolders": {
     "C:\\Users\\Callum White\\.nuget\\packages\\": {}
@@ -15,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Callum White\\Documents\\GitHub\\hexCode\\main.csproj",
+      "projectUniqueName": "A:\\code\\cs\\hexCode\\main.csproj",
       "projectName": "main",
-      "projectPath": "C:\\Users\\Callum White\\Documents\\GitHub\\hexCode\\main.csproj",
+      "projectPath": "A:\\code\\cs\\hexCode\\main.csproj",
       "packagesPath": "C:\\Users\\Callum White\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Callum White\\Documents\\GitHub\\hexCode\\obj\\",
+      "outputPath": "A:\\code\\cs\\hexCode\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Callum White\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -42,12 +40,6 @@
     "frameworks": {
       "net5.0": {
         "targetAlias": "netcoreapp5.0",
-        "dependencies": {
-          "DotNetZip": {
-            "target": "Package",
-            "version": "[1.15.0, )"
-          }
-        },
         "imports": [
           "net461",
           "net462",
@@ -63,19 +55,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1100",
-      "level": "Error",
-      "message": "Unable to resolve 'DotNetZip (>= 1.15.0)' for 'net5.0'.",
-      "libraryId": "DotNetZip",
-      "targetGraphs": [
-        "net5.0"
-      ]
-    }
-  ]
+  }
 }

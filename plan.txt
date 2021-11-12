@@ -21,6 +21,9 @@ check the lowest value in the array
 possibly using a for loop to cycle through the values?
 
 
+ANCHOR ADD TRY CATCHES FOR USER INPUT
+
+
 
 
 

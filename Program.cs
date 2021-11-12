@@ -1,12 +1,13 @@
 using System;
 using System.IO;
 using System.Threading;
-using Ionic.Zip;
 using System.Linq;
 
 
 
 class Program {
+
+  
     // CALLUMS HEXADECIMAL PROJECT
 
 
@@ -35,7 +36,6 @@ class Program {
 
   static void Start()
   {
-      Check();
       Login();
   }
 
@@ -63,6 +63,24 @@ class Program {
       Console.Write("> ");
       // crates string choice and turns it lower case
       string choice = Console.ReadLine().ToLower();
+      // array of the choicesa available
+      string[] choices = {
+        "hexadecimal guesser",
+        "colour guesser",
+        "new login",
+        "logout",
+        "quit"
+      };
+
+      // loops through the choices array and checks if there are aby
+      // spelling misatakes to correct for
+      for(int i = 0; i < choices.Length; i++)
+      {
+        choice = SpellingMistakes(choice, choices[i]);
+      }
+
+
+
       // if string has a value then run code
       if(String.IsNullOrWhiteSpace(choice) == false)
       {
@@ -120,6 +138,18 @@ class Program {
       Console.Write("> ");
       // takes in user input
       string enteredHardness = Console.ReadLine().ToLower();
+      string[] choices = {
+        "easy",
+        "hard",
+        "main menu"
+      };
+
+      for(int i = 0; i < choices.Length; i++)
+      {
+        enteredHardness = SpellingMistakes(enteredHardness, choices[i]);
+      }
+
+
       if(enteredHardness == "easy")
       {
           // runs easy
@@ -271,7 +301,7 @@ class Program {
 
   static void NewLogin()
   {
-      UnZip();
+      
       Console.Clear();
       Console.WriteLine("Enter New Username");
       Console.Write("> ");
@@ -290,29 +320,22 @@ class Program {
           }
           Console.WriteLine("Successfully Added The New Details");
           Thread.Sleep(1500);
-          Zip();
+          
           MainMenu();
       }
       catch(Exception E)
       {
-          Zip();
+          
           Console.WriteLine("There Was An Error Adding Your New Details");
           Console.WriteLine(E.Message);
       }
-      Zip();
+      
   }
 
-  static void Check()
-  {
-      if(File.Exists(userPath))
-      {
-        Zip();
-      }
-  }
 
   static void Login()
   {
-      UnZip();
+      
       Console.Clear();
       Console.WriteLine("Please Enter Your Username");
       Console.Write("> ");
@@ -329,7 +352,7 @@ class Program {
           string userNamesReadIn = File.ReadAllText(userPath);
           string[] details = userNamesReadIn.Split(',');
           string userPassword = enteredUsername + enteredPassword;
-          Zip();
+          
           if(details.Contains(userPassword))
           {
               Console.Clear();
@@ -357,24 +380,7 @@ class Program {
 
 
 
-  static void Zip()
-  {
-    using(ZipFile zip = new ZipFile())
-      {
-          zip.AddFile(userPath);
-          zip.Save("csvFiles/userPathZipped");
-          File.Delete(userPath);
-      }
-  }
-
-  static void UnZip()
-  {
-      using(ZipFile zip = new ZipFile("csvFiles/userPathZipped"))
-      {
-          zip.ExtractAll("", Ionic.Zip.ExtractExistingFileAction.OverwriteSilently);
-          File.Delete("csvFiles/userPathZipped");
-      }
-  }
+  
 
 
 
@@ -476,6 +482,31 @@ class Program {
     return false;
   }
 
+  
+
+
+  static string SpellingMistakes(string input, string correctString)
+  {
+    /*
+      use comapre method to check differnce between strings
+      loop through the options to check if similar
+      band of allowance is equal to the legnth of the
+      correct string devided by four plus one
+    */
+
+  
+    if(Compare(input, correctString) < ((correctString.Length / 4) + 1))
+    {
+      return correctString;
+    }
+    else
+    {
+      return input;
+    }
+
+  }
+
+
 
   static void WriteFinalColour(string colour, bool close)
   {
@@ -496,7 +527,7 @@ class Program {
       Console.WriteLine("Your Value Was Closest To " + colour);
       Thread.Sleep(2000);
       Console.WriteLine("Press R To Retry.");
-      Console.WriteLine9("");
+      Console.WriteLine("> ");
       Thread.Sleep(800);
       Console.WriteLine("Press Any Other Key To Go Back To Main Menu");
       Console.Write("> ");

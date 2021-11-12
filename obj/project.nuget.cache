@@ -1,18 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4bNMmzhB8GhnSJ6ku2Dc9UZh3GHRQcrVF8+YuIiin25z7figfK1JLl9vOGSCXwTKwv+FNhmGkSoadKNoxoEILg==",
-  "success": false,
-  "projectFilePath": "C:\\Users\\Callum White\\Documents\\GitHub\\hexCode\\main.csproj",
+  "dgSpecHash": "064p86D4EtiFcsH0whrQb9BThL0ihjSYLY6nPvegyd5Qt8ylXYD+vl+c0v39ER7Pz6K+0cVtHBk4DNBQmXSOUw==",
+  "success": true,
+  "projectFilePath": "A:\\code\\cs\\hexCode\\main.csproj",
   "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "NU1100",
-      "level": "Error",
-      "message": "Unable to resolve 'DotNetZip (>= 1.15.0)' for 'net5.0'.",
-      "libraryId": "DotNetZip",
-      "targetGraphs": [
-        "net5.0"
-      ]
-    }
-  ]
+  "logs": []
 }

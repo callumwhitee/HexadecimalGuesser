@@ -6,8 +6,6 @@
 		<StartupObject>Program</StartupObject>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="DotNetZip" Version="1.15.0" />
-  </ItemGroup>
+ 
 
 </Project>
